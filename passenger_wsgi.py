@@ -1,0 +1,1 @@
+from bestaccdeal_projects.wsgi import application

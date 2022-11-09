@@ -1,0 +1,96 @@
+{% load static %}
+
+  <div class="closes"><i class="fa fa-times" aria-hidden="true"></i></div>
+  <!-- logo -->
+  <div class="logo desktop-view">
+    <a href="{% url 'dashboard' %}">
+      <img class="big-logo" src="{% static 'assets/img/logo.png' %}" alt="logo">
+    </a>
+  </div>
+  <!-- user -->
+  <div class="user">
+    <img class="img-fluid" src="{% static 'assets/img/user.png' %}" alt="">
+    <h4>Ziaur Rahman Joy</h4>
+    <p><span class="dot"></span>{{ request.user.user_type }}</p>
+  </div>
+  <!-- menu -->
+  <nav class="menu">
+    <ul>
+      <li><a href="{% url 'dashboard' %}"><i class="fa fa-tachometer" aria-hidden="true"></i> <span class="hide-item">Dashboard </span></a></li>
+      <li><a href="javascript:void(0)"><i class="fa fa-solid fa-key" aria-hidden="true"></i><span class="hide-item"> RBAC </span> <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+        <!-- sub-menu -->
+        <ul class="sub-menu">
+          <li><a href="javascript:void(0)">User Setup<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              {% if request.user.is_superuser == True %}
+              <li><a href="{% url 'mother-admin-registration-create' %}">Mother Admin</a></li>
+              {% endif %}
+              {% if request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+              <li><a href="{% url 'sister-admin-registration-create' %}">Sister Admin</a></li>
+              {% endif %}
+              {% if request.user.user_type == 'Sister Organization Admin' or request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+              <li><a href="{% url 'branch-admin-registration-create' %}">Branch Admin</a></li>
+              {% endif %}
+              <li><a href="#">Regular User</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">User List <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              {% if request.user.is_superuser == True %}
+              <li><a href="{% url 'mother-admin-index' %}">Mother Admin</a></li>
+              {% endif %}
+              {% if request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+              <li><a href="{% url 'sister-admin-index' %}">Sister Admin</a></li>
+              {% endif %}
+              {% if request.user.user_type == 'Sister Organization Admin' or request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+              <li><a href="{% url 'branch-admin-index' %}">Branch Admin</a></li>
+              {% endif %}
+              <li><a href="#">Regular User</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">Permission <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="{% url 'user-wise-permission' %}">User Wise</a></li>
+              <li><a href="#">Designation Wise</a></li>
+              <li><a href="#">Department Wise</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+
+      <!-- Organization -->
+      {% if request.user.user_type == 'Sister Organization Admin' or request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+      <li><a href="javascript:void(0)"><i class="fa fa-solid fa-building" aria-hidden="true"></i><span class="hide-item"> Organization </span> <span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+        <!-- sub-menu -->
+        <ul class="sub-menu">
+          {% if request.user.is_superuser == True %}
+          <li><a href="javascript:void(0)">Mother Organization<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="{% url 'mother-organization-create' %}">Add New Organization</a></li>
+              <li><a href="{% url 'mother-organization-index' %}">Organization List</a></li>
+            </ul>
+          </li>
+          {% endif %}
+          {% if request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+          <li><a href="javascript:void(0)">Sister Organization<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="{% url 'sister-organization-create' %}">Add New Organization</a></li>
+              <li><a href="{% url 'sister-organization-index' %}">Organization List</a></li>
+            </ul>
+          </li>
+          {% endif %}
+          {% if request.user.user_type == 'Sister Organization Admin' or request.user.user_type == 'Mother Organization Admin' or request.user.is_superuser == True %}
+          <li><a href="javascript:void(0)">Branch<span class="drop-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span></a>
+            <ul class="sub-sub">
+              <li><a href="{% url 'branch-create' %}">Add New Branch</a></li>
+              <li><a href="{% url 'branch-index' %}">Branches</a></li>
+            </ul>
+          </li>
+          {% endif %}
+        </ul>
+      </li>
+      {% endif %}
+
+    </ul>
+  </nav>
+

@@ -1,0 +1,81 @@
+{% load static %}
+<header> 
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-info">
+      <div class="container">
+        <!-- <ul class="personal-info">
+          <li>
+            <p><i class="fa fa-phone"></i> + 124 45 78 678 </p>
+          </li>
+          <li>
+            <p><i class="fa fa-envelope-o"></i> Support@mail.com </p>
+          </li>
+          <li>
+            <p><i class="fa fa-clock-o"></i> Mon - Fri : 08.00 - 17.00 </p>
+          </li>
+        </ul> -->
+        <ul class="social">
+          {% for media in media_link %}
+          <li><a href="{{media.facebook}}""><i class="fa fa-facebook"></i></a></li>
+          <li><a href="{{media.twitter}}"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="{{media.gmail}}"><i class="fa fa-google"></i></a></li>
+          <li><a href="{{media.linkedin}}"><i class="fa fa-linkedin"></i></a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Logo -->
+  <div class="container">
+    <div class="logo"> <a href="#."><img  class="img-responsive" src="{% static 'images/logo.png' %}" alt="" ></a> </div>
+    <!-- INFO -->
+    <div class="top-info-con">
+      <ul>         
+        <!-- Call Us Now -->
+        {% for contact in contact %}
+        <li>
+          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-1.png' %}" alt="" > </div>
+          <div class="media-body">
+            <h6>Call Us Now </h6>
+            {{ contact.phone }}
+          </div>
+        </li>         
+        <!-- Email us -->
+        <li>
+          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-2.png' %}" alt="" > </div>
+          <div class="media-body">
+            <h6>Email us </h6>
+            {{contact.email}}
+          </div>
+        </li>        
+        <!-- Opening Time -->
+        <li class="lst">
+          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-3.png' %}" alt="" > </div>
+          <div class="media-body">
+            <h6>Opening Time </h6>
+            {{ contact.open_time }}
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav ownmenu">
+        <li class="active"> <a href="#">Home</a> </li>
+        <li> <a href="#">About</a> </li>
+        <li> <a href="#">Services</a> </li>
+        <li> <a href="#">Portfolio</a> </li>
+        <li> <a href="#">Blog</a> </li>
+        <li> <a href="#">Contact us</a> </li>
+      </ul>
+      
+      <!-- GET A QUOTES -->
+    </div>
+  </nav>
+</header>

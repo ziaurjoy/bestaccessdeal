@@ -1,0 +1,323 @@
+{% extends "website/base.html" %}
+{% block title %}Best access deal{% endblock %}
+{% load static %}
+
+{% block content %}
+<div id="generic_price_table">   
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <!--PRICE HEADING START-->
+          <div class="price-heading clearfix">
+            <h1>Our Product Prices</h1>
+          </div>
+          <!--//PRICE HEADING END-->
+        </div>
+      </div>
+    </div>
+    <div class="container">          
+      <!--BLOCK ROW START-->
+      <div class="row">
+        {% for cuppon_card in cuppon_card_list %}
+        <div class="col-md-3">             
+        <!--PRICE CONTENT START-->
+          <div class="generic_content active clearfix">                        
+            <!--HEAD PRICE DETAIL START-->
+            <div class="generic_head_price clearfix">                 
+              <!--HEAD CONTENT START-->
+              <div class="generic_head_content clearfix">
+                <!--HEAD START-->
+                <div class="head_bg"></div>
+                <div class="head">
+                  <span>{{cuppon_card.header_title}}</span>
+                </div>
+                <!--//HEAD END-->                               
+              </div>
+              <!--//HEAD CONTENT END-->                           
+              <!--PRICE START-->
+              <!-- <div class="generic_price_tag clearfix">  
+                <span class="price">
+                  <span class="sign">$</span>
+                  <span class="currency">199</span>
+                  <span class="cent">.99</span>
+                  <span class="month">/MON</span>
+                </span>
+              </div> -->
+              <!--//PRICE END-->                           
+            </div>                            
+            <!--//HEAD PRICE DETAIL END-->                        
+            <!--FEATURE LIST START-->
+            <div class="generic_feature_list">
+              <ul>
+                <li><span>{{cuppon_card.title_1}}</span> {{cuppon_card.title1_p}}</li>
+                <li><span>{{cuppon_card.title_2}}</span> {{cuppon_card.title2_p}}</li>
+                <li><span>{{cuppon_card.title_3}}</span> {{cuppon_card.title3_p}}</li>
+              </ul>
+            </div>
+            <!--//FEATURE LIST END-->                     
+            <!--BUTTON START-->
+            <div class="generic_price_btn clearfix">
+              <a class="" href="">Sign up</a>
+            </div>
+            <!--//BUTTON END-->                       
+          </div>
+          <!--//PRICE CONTENT END-->                     
+        </div>
+        {% endfor %}
+      </div>  
+      <!--//BLOCK ROW END-->           
+    </div>
+  </section>             
+</div>
+
+
+  
+  
+  <!-- Content -->
+  <div id="content"> 
+    
+    <!-- Welcome to Beat Access Deal -->
+    <section class="welcome padding-top-100 padding-bottom-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12"> 
+            <!-- Heading -->
+            <div class="heading"> <span>Welcome to Beat Access Deal</span>
+              <h4>Why choose us ?</h4>
+              <hr>
+            </div>
+            <p>
+              We offer a wide range of Moving Services and handling yor goods.We given excellent services to your all moving services What might be right for your may not be to right for some and We work with clients big and small across a range of sectors.They call him Flipper Flipper faster than lightning. No one you see is smarter than he.Now the world don't beat of just one drumu sathsa. 
+            </p>
+        </div>
+        
+        <!-- SERVICES -->
+        <div class="services">
+          <ul class="row">
+            
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/ser-icon-1.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>24/7 services</h6>
+                  <p>The amazing method that ensures   
+                    time for everything from now life!</p>
+                </div>
+              </article>
+            </li>
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/ser-icon-2.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>Over 680 Vechicles</h6>
+                  <p>The amazing method that ensures   
+                    time for everything from now life!</p>
+                </div>
+              </article>
+            </li>
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/ser-icon-3.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>Worlwide</h6>
+                  <p>The amazing method that ensures   
+                    time for everything from now life!</p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Request a quote -->
+
+    
+    <!-- SERVICES -->
+    <section class="padding-top-30 padding-bottom-70">
+      <div class="container"> 
+        <!-- Heading -->
+        <div class="heading text-center"> <span>our services</span>
+          <h4>What we offer</h4>
+          <hr>
+        </div>
+        
+        <!-- SERVICES -->
+        <div class="services style-2">
+          <ul class="row">
+            
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/main-icon-1.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>moving locally </h6>
+                </div>
+                <p>The amazing method that ensures you are always on time for everything from now on. Being on time is crucial to daily life!</p>
+              </article>
+            </li>
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/main-icon-2.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>moving overseas </h6>
+                </div>
+                <p>The amazing method that ensures you are always on time for everything from now on. Being on time is crucial to daily life!</p>
+              </article>
+            </li>
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/main-icon-3.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>corporate relocation </h6>
+                </div>
+                <p>The amazing method that ensures you are always on time for everything from now on. Being on time is crucial to daily life!</p>
+              </article>
+            </li>
+            
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/main-icon-4.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>commercial relocation </h6>
+                </div>
+                <p>The amazing method that ensures you are always on time for everything from now on. Being on time is crucial to daily life!</p>
+              </article>
+            </li>
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/main-icon-5.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>packing Services </h6>
+                </div>
+                <p>The amazing method that ensures you are always on time for everything from now on. Being on time is crucial to daily life!</p>
+              </article>
+            </li>
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{% static 'images/main-icon-6.png' %}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>storage Services </h6>
+                </div>
+                <p>The amazing method that ensures you are always on time for everything from now on. Being on time is crucial to daily life!</p>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
+    <!-- WORK PROCESS -->
+
+    
+    <!-- TEAM -->
+    
+    
+    <!-- Testimonial -->
+    
+    
+    <!-- blog -->
+    <section class="blog light-gray-bg padding-top-100 padding-bottom-70">
+      <div class="container"> 
+        
+        <!-- Heading -->
+        <div class="heading text-center margin-bottom-60"> <span>Our Blog</span>
+          <h4>Latest New updates</h4>
+          <hr>
+        </div>
+        
+        <!-- Row -->
+        <div class="row"> 
+          <!-- BLOG -->
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <article> <img class="img-responsive" src="{% static 'images/post-img-1.jpg' %}" alt="" >
+              <div class="post-info">
+                <div class="media-left">
+                  <div class="date"> 17 SEP</div>
+                </div>
+                <div class="media-body"> <h4 class="tittle-post"><a href="#.">Making their way the only way </a></h4>
+                  <hr class="main">
+                  <span>By : <span class="primary-color">Luck Walker </span> Category : <span class="primary-color">News </span></span> </div>
+                <p>What might be right for you may not be to right for be some. Now the world  one drumu sathsa. </p>
+                <ul class="pull-left icons">
+                  <li><i class="icon-heart"></i></li>
+                  <li><i class="icon-bubbles"></i></li>
+                  <li><i class="icon-share"></i></li>
+                </ul>
+                <a href="#." class="read-more">read more </a> </div>
+            </article>
+          </div>
+          
+          <!-- BLOG -->
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <article> <img class="img-responsive" src="{% static 'images/post-img-2.jpg' %}" alt="" >
+              <div class="post-info">
+                <div class="media-left">
+                  <div class="date"> 17 SEP</div>
+                </div>
+                <div class="media-body"> <h4 class="tittle-post"><a href="#.">Making their way the only way </a></h4>
+                  <hr class="main">
+                  <span>By : <span class="primary-color">Luck Walker </span> Category : <span class="primary-color">News </span></span> </div>
+                <p>What might be right for you may not be to right for be some. Now the world  one drumu sathsa. </p>
+                <ul class="pull-left icons">
+                  <li><i class="icon-heart"></i></li>
+                  <li><i class="icon-bubbles"></i></li>
+                  <li><i class="icon-share"></i></li>
+                </ul>
+                <a href="#." class="read-more">read more </a> </div>
+            </article>
+          </div>
+          
+          <!-- BLOG -->
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <article> <img class="img-responsive" src="{% static 'images/post-img-3.jpg' %}" alt="" >
+              <div class="post-info">
+                <div class="media-left">
+                  <div class="date"> 17 SEP</div>
+                </div>
+                <div class="media-body"> <h4 class="tittle-post"><a href="#.">Making their way the only way </a></h4>
+                  <hr class="main">
+                  <span>By : <span class="primary-color">Luck Walker </span> Category : <span class="primary-color">News </span></span> </div>
+                <p>What might be right for you may not be to right for be some. Now the world  one drumu sathsa. </p>
+                <ul class="pull-left icons">
+                  <li><i class="icon-heart"></i></li>
+                  <li><i class="icon-bubbles"></i></li>
+                  <li><i class="icon-share"></i></li>
+                </ul>
+                <a href="#." class="read-more">read more </a> </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+{% endblock %}
