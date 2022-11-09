@@ -27,9 +27,9 @@ SECRET_KEY = 'django-insecure-rt#z3*w_gqu%-6*3qq0d)^(zdoed-!7zv+o4bj(jo+2jczy0pj
 DEBUG = True
 
 # Server Host
-ALLOWED_HOSTS = ['www.bestaccdeal.com', 'bestaccdeal.com']
+# ALLOWED_HOSTS = ['www.bestaccdeal.com', 'bestaccdeal.com']
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -80,36 +80,34 @@ WSGI_APPLICATION = 'bestaccdeal_projects.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DJANGO_DB_NAME', 'bestwmlw_bestaccdeal'),
-        'USER': os.environ.get('DJANGO_DB_USER', 'bestwmlw_joy'),
-        'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', 'bestaccdeal'),
-        'HOST': os.environ.get('DJANGO_DB_HOST', ''),
-        'PORT': os.environ.get('PORT', ''),
-
-    }
-}
-
-
-
-
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': os.environ.get('DJANGO_DB_NAME', 'bestaccdeal'),
-#         'USER': os.environ.get('DJANGO_DB_USER', 'root'),
-#         'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', ''),
-#         'HOST': os.environ.get('DJANGO_DB_HOST', '127.0.0.1'),
-#         'PORT': os.environ.get('PORT', '3306'),
-#         'OPTIONS': {
-#             "init_command": "SET foreign_key_checks = 0;",
-#         }
-        
-        
+#         'NAME': os.environ.get('DJANGO_DB_NAME', 'bestwmlw_bestaccdeal'),
+#         'USER': os.environ.get('DJANGO_DB_USER', 'bestwmlw_joy'),
+#         'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', 'bestaccdeal'),
+#         'HOST': os.environ.get('DJANGO_DB_HOST', ''),
+#         'PORT': os.environ.get('PORT', ''),
+
 #     }
 # }
+
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DJANGO_DB_NAME', 'bestaccdeal'),
+        'USER': os.environ.get('DJANGO_DB_USER', 'root'),
+        'PASSWORD': os.environ.get('DJANGO_DB_PASSWORD', ''),
+        'HOST': os.environ.get('DJANGO_DB_HOST', '127.0.0.1'),
+        'PORT': os.environ.get('PORT', '3306'),
+        'OPTIONS': {
+            "init_command": "SET foreign_key_checks = 0;",
+        }   
+    }
+}
 
 
 
@@ -148,13 +146,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/home/bestwmlw/public_html/static'
-
-
 # STATIC_URL = '/static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
-# STATIC_ROOT = os.path.join(BASE_DIR,"static_root")
+# STATIC_ROOT = '/home/bestwmlw/public_html/static'
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR,"static_root")
 
 
 # Collect media files here
