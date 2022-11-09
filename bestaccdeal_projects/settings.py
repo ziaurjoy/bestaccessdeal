@@ -29,7 +29,7 @@ DEBUG = True
 # Server Host
 ALLOWED_HOSTS = ['www.bestaccdeal.com', 'bestaccdeal.com']
 
-# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'website_app',
+
+    'sorl.thumbnail',
 ]
 
 MIDDLEWARE = [
@@ -105,9 +107,7 @@ DATABASES = {
 #         'PORT': os.environ.get('PORT', '3306'),
 #         'OPTIONS': {
 #             "init_command": "SET foreign_key_checks = 0;",
-#         }
-        
-        
+#         }   
 #     }
 # }
 
@@ -163,6 +163,8 @@ PROJECT_ROOT = BASE_DIR
 MEDIA_DIR = BASE_DIR/'media'
 MEDIA_ROOT = MEDIA_DIR
 
+# MEDIA_ROOT =  os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

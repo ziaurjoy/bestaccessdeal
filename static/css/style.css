@@ -564,7 +564,7 @@ header .quotes a:hover {
 }
 .top-info-con{
 	float:right;
-	width:80%;
+	width:72%;
 	padding-top:30px;
 	background:#fff;
 	position: relative;
@@ -1475,10 +1475,10 @@ iframe.video{
 	background: #252525;
 }
 .blog .date {
-	width: 61px;
-	height: 61px;
+	width: 100px;
+	height: 70px;
 	float: left;
-	margin-right:10px;
+	margin-right: 0px;
 	font-weight: bold;
 	font-size: 15px;
 	color: #fff;
@@ -2650,7 +2650,9 @@ body{background-color:#eee;}
 }
 
 #generic_price_table .generic_content .generic_head_price{
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
+	background-color: #00b1f1;
+	
 }
 
 #generic_price_table .generic_content .generic_head_price .generic_head_content .head_bg{
@@ -2678,7 +2680,7 @@ body{background-color:#eee;}
 }
 
 #generic_price_table .generic_content .generic_feature_list ul li{  
-  color: #a7a7a7;
+  color: #837b7b;
 }
 
 #generic_price_table .generic_content .generic_feature_list ul li span{

@@ -1,0 +1,48 @@
+{% extends "website/base.html" %}
+{% block title %}About{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<!-- Welcome to Trudel -->
+<section class="welcome light-gray-bg padding-top-100 padding-bottom-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-6"> 
+        <!-- Heading -->
+        <div class="heading"> <span>Welcome to Best Access Deal</span>
+          <h4>Why choose us ?</h4>
+          <hr>
+        </div>
+        {% for choose_messge in choose_messge_list %}
+        <p>{{choose_messge}}</p>
+        {% endfor %}
+      </div>
+      <div class="col-md-4 col-sm-6">
+        <div class="services no-margin-top">
+          <ul class="row">
+            {% for service in services %}
+            <!-- 24/7 services -->
+            <li class="col-md-12 col-sm-12 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{{ service.image.url }}" style="height: 80%; width: 80%" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>{{ service.title }}</h6>
+                  <p>{{ service.message }}</p>
+                </div>
+              </article>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SERVICES --> 
+    
+  </div>
+</section>
+
+{% endblock %}
