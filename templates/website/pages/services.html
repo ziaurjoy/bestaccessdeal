@@ -1,0 +1,73 @@
+{% extends "website/base.html" %}
+{% block title %}Best access deal{% endblock %}
+{% load static %}
+
+{% block content %}
+  <!-- Content -->
+  <div id="content"> 
+    <!-- Welcome to Beat Access Deal -->
+    <section class="welcome padding-top-100 padding-bottom-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12"> 
+            <!-- Heading -->
+            <div class="heading"> <span>Welcome to Best Access Deal</span>
+              <h4>Why choose us ?</h4>
+              <hr>
+            </div>
+            {% for choose_messge in choose_messge_list %}
+            <p>{{choose_messge}}</p>
+            {% endfor %}
+        </div>      
+        <!-- SERVICES -->
+        <div class="services">
+          <ul class="row">
+            {% for service in services %}
+            <!-- 24/7 services -->
+            <li class="col-md-4 col-sm-6">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{{ service.image.url }}" style="height: 100%; width: 100%" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>{{ service.title }}</h6>
+                  <p>{{ service.message }}</p>
+                </div>
+              </article>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- SERVICES -->
+    <section class="padding-top-30 padding-bottom-70">
+      <div class="container"> 
+        <!-- Heading -->
+        <div class="heading text-center"> <span>our services</span>
+          <h4>What we offer</h4>
+          <hr>
+        </div>       
+        <!-- SERVICES -->
+        <div class="services style-2">
+          <ul class="row">
+            <!-- 24/7 services -->
+            {% for service_and_offer in services_and_offers %}
+            <li class="col-md-4 col-sm-6 col-xs-12">
+              <article>
+                <div class="media-left">
+                  <div class="icon"><img src="{{ service_and_offer.image.url }}" alt="" ></div>
+                </div>
+                <div class="media-body">
+                  <h6>{{ service_and_offer.title }} </h6>
+                </div>
+                <p>{{ service_and_offer.message }}</p>
+              </article>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

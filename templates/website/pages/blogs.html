@@ -1,0 +1,56 @@
+{% extends "website/base.html" %}
+{% block title %}Blogs{% endblock %}
+{% load static %}
+
+{% block content %}
+  <!-- Content -->
+  <div id="content"> 
+    <!-- blog -->
+    <section class="blog light-gray-bg padding-top-100 padding-bottom-70">
+      <div class="container"> 
+        <!-- Row -->
+        <div class="row"> 
+          <!-- BLOG -->
+          {% for blog in blogs %}
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <article> <img class="img-responsive" src="{{ blog.image.url }}" alt="" >
+              <div class="post-info">
+                <div class="media-left">
+                  <div class="date" style="height: 55px;"> {{ blog.date.date }}</div>
+                </div>
+                <div class="media-body"> <h4 class="tittle-post"><a href="{% url 'blog-details' blog.id %}">{{ blog.title}} </a></h4>
+                  <hr class="main">
+                  <span>By : <span class="primary-color">{{ blog.author }} </span> Category : <span class="primary-color">{{ blog.category }} </span></span> </div>
+                <p>{{blog.body|truncatechars:100}} </p>
+                <a href="{% url 'blog-details' blog.id %}" class="read-more">read more </a> </div>
+            </article>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+  {% if blogs.has_other_pages %}
+    <ul class="pagination">
+      {% if blogs.has_previous %}
+        <li><a href="?page={{ blogs.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in blogs.paginator.page_range %}
+        {% if blogs.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if blogs.has_next %}
+        <li><a href="?page={{ blogs.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+  {% endif %}
+  </div>
+  
+{% endblock %}

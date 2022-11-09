@@ -1,0 +1,57 @@
+{% extends "website/base.html" %}
+{% block title %}Best access deal{% endblock %}
+{% load static %}
+
+{% block content %}
+
+<!-- Content -->
+<div id="content">
+  <div class="blog blog-page padding-top-100 padding-bottom-100 section">
+    <div class="container"> 
+      <!-- Row -->
+      <div class="row"> 
+        <!-- BLOG -->
+        <div class="col-md-9 col-sm-6 col-xs-12">
+          <div class="news-post">
+            <article> <img class="img-responsive" src={{ blog.image.url }} alt="" >
+              <div class="post-info">
+                <div class="media-left">
+                  <div class="date"> {{blog.date}}</div>
+                </div>
+                <div class="media-body"> <h4 class="tittle-post">{{blog.title}}</h4>
+                  <hr class="main">
+                  <span>By : <span class="primary-color">{{ blog.author }} </span> Category : <span class="primary-color">{{ blog.category }} </span></span> </div>
+                <p>{{ blog.body }}</p>
+                <!-- Shaer -->
+                <ul class="pull-left icons">
+                  <li><i class="icon-heart"></i></li>
+                  <li><i class="icon-bubbles"></i></li>
+                  <li><i class="icon-share"></i></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+        
+        <!-- Side Bar -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="side-bar"> 
+            <!--======= Recent Posts =========-->
+            <h5 class="side-tittle margin-top-50">Recent Posts </h5>
+            <hr class="main">
+            <ul class="papu-post">
+              {% for blog in blogs %}
+              <li class="media">
+                <div class="media-left"> <a href="{% url 'blog-details' blog.id %}"> <img class="media-object" src="{{ blog.image.url }}" alt=""></a> </div>
+                <div class="media-body"> <a class="media-heading" href="{% url 'blog-details' blog.id %}">{{ blog.title }}</a> <span>{{ blog.date.date }}</span> </div>
+              </li>
+              {% endfor  %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
