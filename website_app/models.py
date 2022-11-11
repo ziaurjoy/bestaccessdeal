@@ -12,11 +12,12 @@ class SocialMediaLink(models.Model):
 		return 'Social Media Link'
 
 class Contact(models.Model):
-	phone = models.IntegerField()
-	whatsapp_number = models.IntegerField()
-	email = models.EmailField()
-	open_time = models.CharField(max_length=50)
-	address = models.TextField()
+	phone = models.CharField(max_length=25, blank=True, null=True)
+	whatsapp = models.CharField(max_length=25, blank=True, null=True)
+	skype = models.CharField(max_length=25, blank=True, null=True)
+	telegram = models.CharField(max_length=25, blank=True, null=True)
+	email = models.EmailField(blank=True, null=True)
+	address = models.TextField(blank=True, null=True)
 	
 	def __str__(self):
 		return 'Contact'
