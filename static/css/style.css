@@ -706,8 +706,10 @@ font-weight: bold;
 .services .icon {
 	height: 60px;
 	width: 60px;
-	border: 2px solid #fff;
-	background: #00b1f1;
+	/* border: 2px solid #fff; */
+	/* background: #00b1f1; */
+	background: #444444;
+	
 	line-height: 54px;
 	text-align: center;
 	margin-right: 10px;
@@ -3006,7 +3008,8 @@ body{background-color:#eee;}
     text-align: center;
 }
 .price-heading h1{
-  color: #666;
+  color: #00b1f1;;
+  /* background: #00b1f1; */
   margin: 0;
   padding: 50px 0 50px 0;
 }

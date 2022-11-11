@@ -18,33 +18,33 @@
   
   <!-- Logo -->
   <div class="container">
-    <div class="logo"> <a href="{% url 'home' %}"><img  class="img-responsive" src="{% static 'images/logo.png' %}" alt="" ></a> </div>
+    <div class="logo"> <a href="{% url 'home' %}"><img  class="img-responsive" src="{% static 'images/logo1.png' %}" alt="" ></a> </div>
     <!-- INFO -->
     <div class="top-info-con">
       <ul>         
         <!-- Call Us Now -->
         {% for contact in contact %}
         <li>
-          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-1.png' %}" alt="" > </div>
+          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/whats-app.png' %}" alt="" > </div>
           <div class="media-body">
-            <h6>Call Us Now </h6>
-            {{ contact.phone }}
+            <h6>WhatsApp</h6>
+            {{ contact.whatsapp }}
           </div>
         </li>         
         <!-- Email us -->
         <li>
-          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-2.png' %}" alt="" > </div>
+          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/skype.png' %}" alt="" > </div>
           <div class="media-body">
-            <h6>Email us </h6>
-            {{contact.email}}
+            <h6>Skype</h6>
+            {{contact.skype}}
           </div>
         </li>        
         <!-- Opening Time -->
         <li class="lst">
-          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-3.png' %}" alt="" > </div>
+          <div class="media-left"> <img class="margin-right-10" src="{% static 'images/taligram.png' %}" alt="" > </div>
           <div class="media-body">
-            <h6>Opening Time </h6>
-            {{ contact.open_time }}
+            <h6>Telegram</h6>
+            {{ contact.telegram }}
           </div>
         </li>
         {% endfor %}
@@ -59,7 +59,6 @@
         <li> <a href="{% url 'home' %}">Home</a> </li>
         <li> <a href="{% url 'about' %}">About</a> </li>
         <li> <a href="{% url 'services' %}">Services</a> </li>
-        <li> <a href="#">Portfolio</a> </li>
         <li> <a href="{% url 'blogs' %}">Blog</a> </li>
         <li> <a href="{% url 'contact' %}">Contact us</a> </li>
       </ul>

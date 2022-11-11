@@ -1,11 +1,71 @@
 {% load static %}
-<section class="sub-footer padding-top-40 padding-bottom-40">
+<section class="sub-footer padding-top-40 padding-bottom-40"  style="margin: auto;">
   <div class="container">
-    <div class="sub-space">
-      <div class="media-left"> <img class="margin-right-20" src="{% static 'images/icon-footer.png' %}" alt="" > </div>
-      <div class="media-body">
-        <h4>Find Out Our Service Provided Areas ?</h4>
-        <a href="#.">Click here for get direction</a> </div>
-    </div>
+  <!-- INFO -->
+    <ul>         
+      <!-- Call Us Now -->
+      {% for contact in contact %}
+      <li class="col-md-4">
+        <div class="media-left" > <img class="margin-right-10" src="{% static 'images/whats-app.png' %}" alt="" > </div>
+        <div class="media-body" style="color: #fdfdfd">
+          <h6 style="color: #fdfdfd">whatsapp </h6>
+          {{ contact.whatsapp }}
+        </div>
+      </li>         
+      <!-- Email us -->
+      <li class="col-md-4">
+        <div class="media-left"> <img class="margin-right-10" src="{% static 'images/skype.png' %}" alt="" > </div>
+        <div class="media-body" style="color: #fdfdfd">
+          <h6 style="color: #fdfdfd">Skype </h6>
+          {{contact.skype}}
+        </div>
+      </li>        
+      <!-- Opening Time -->
+      <li class="col-md-4">
+        <div class="media-left"> <img class="margin-right-10" src="{% static 'images/taligram.png' %}" alt="" > </div>
+        <div class="media-body" style="color: #fdfdfd">
+          <h6 style="color: #fdfdfd">Telegram </h6>
+          {{ contact.telegram }}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
   </div>
+
 </section>
+
+{% comment %} 
+<div class="container">
+  <div class="logo"> <a href="{% url 'home' %}"><img  class="img-responsive" src="{% static 'images/logo.png' %}" alt="" ></a> </div>
+  <!-- INFO -->
+  <div class="top-info-con">
+    <ul>         
+      <!-- Call Us Now -->
+      {% for contact in contact %}
+      <li>
+        <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-1.png' %}" alt="" > </div>
+        <div class="media-body">
+          <h6>Call Us Now </h6>
+          {{ contact.phone }}
+        </div>
+      </li>         
+      <!-- Email us -->
+      <li>
+        <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-2.png' %}" alt="" > </div>
+        <div class="media-body">
+          <h6>Email us </h6>
+          {{contact.email}}
+        </div>
+      </li>        
+      <!-- Opening Time -->
+      <li class="lst">
+        <div class="media-left"> <img class="margin-right-10" src="{% static 'images/icon-top-3.png' %}" alt="" > </div>
+        <div class="media-body">
+          <h6>Opening Time </h6>
+          {{ contact.open_time }}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div> {% endcomment %}
